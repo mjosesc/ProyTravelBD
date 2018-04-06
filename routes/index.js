@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var userModel=require('../models/userModel');
-
-/* GET home page. */
+var destinosModel=require('../models/destinosModel');
+/* GET home page.
 router.get('/', function(req, res, next) {
   res.render('home',
       {
@@ -10,6 +10,20 @@ router.get('/', function(req, res, next) {
         layout: 'layout',
       });
 });
+*/
+
+router.get('/',(req,res,next)=>{
+    destinosModel.fetchAll((error,destinos)=>{
+        if (error) res.status(500).json(error);
+        else{
+        res.render('home',{
+            title: "travels",
+            layout: "layout",
+            destinos
+        })}
+    })
+});
+
 
 router.get('/login', function(req, res, next) {
     res.render('login',
@@ -37,6 +51,7 @@ router.get('/userlist', (req,res,next)=>{
         })
     })
 });
+
 
 router.post('/loginook', function (req,res) {
     let Usuario={
