@@ -5,79 +5,27 @@
 <section>
     <div id="destinos">
         <div class="container-fluid contenedor-destinos">
-            <div class="row fila-destinos d-none d-sm-none d-md-none d-lg-flex d-xl-flex">
-                <div class="col-md-6 col-lg-4 col-xl-4 columna-ultimahora">
-                    <div class="d-flex flex-column destino">
-                        <div class="destino-malta"></div>
-                        <div class=""><h4>Malta al completo</h4></div>
-                        <div class=""><strong>Estancia</strong></div>
-                        <div class=""><span class="descripcion">Vuelo + Alojamiento + 4 Desayunos + Guía Turistica</span></div>
-                        <div class="p-3 align-items-center justify-content-end reservar">
-                            <span class="precio">desde<strong>799€</strong><a href="#destinos" class="btn btn-warning ">RESERVAR</a></span>
+            <div class="row fila-destinos d-none d-sm-none d-md-flex d-lg-flex d-xl-flex">
+                {{#if destinos.length}}
+                    {{#each destinos}}
+                        <div class="col-md-6 col-lg-4 col-xl-4 tarj">
+                            <div class="card destino" style="width: 22rem">
+                                <img class="card-imp-top" src="/images/{{imagen}} title={{imagen}}"></img>
+                                <div class="card-body">
+                                    <h4>{{viaje}}</h4>
+                                    <p>{{fcha_sal}}</p>
+                                    <p>{{fcha_vuel}}</p>
+                                    <p>{{descripcion}}</p>
+                                    <p class="card-text"><span class="precio">desde<strong>{{precio}}€</strong><a href="#destinos" class="btn btn-warning ">RESERVAR</a></span></p>
+                                </div>
+                                <span class="precio">desde<strong>799€</strong><a href="#destinos" class="btn btn-warning ">RESERVAR</a></span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-4 columna-ultimahora">
-
-                    <div class="d-flex flex-column destino">
-                        <div class="destino-london"></div>
-                        <div class=""><h4>London visita guiada</h4></div>
-                        <div class=""><strong>Estancia y Vuelo</strong></div>
-                        <div class=""><span class="descripcion">Vuelo + Alojamiento + 4 Desayunos + Guía Turistica</span></div>
-                        <div class="p-3 align-items-center justify-content-end reservar">
-                            <span class="precio">desde<strong>500€</strong><a href="#destinos" class="btn btn-warning">RESERVAR</a></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-4 columna-ultimahora">
-                    <div class="d-flex flex-column destino">
-                        <div class="destino-dublin"></div>
-                        <div class=""><h4>Conoce los mejores lugares de Dublin</h4></div>
-                        <div class=""><strong>Visita guiada</strong></div>
-                        <div class=""><span class="descripcion">Vuelo + Alojamiento + 4 Desayunos + Guía Turistica</span></div>
-                        <div class="p-3 align-items-center justify-content-end reservar">
-                            <span class="precio">desde<strong>720€</strong><a href="#destinos" class="btn btn-warning">RESERVAR</a></span>
-                        </div>
-                    </div>
-                </div>
+                    {{/each}}
+                {{/if}}
             </div>
-            <div class="row fila-destinos d-none d-sm-none d-md-none d-lg-flex d-xl-flex ">
-                <div class="col-md-6 col-lg-4 col-xl-4 columna-ultimahora">
-                    <div class="d-flex flex-column destino">
-                        <div class="destino-paris"></div>
-                        <div class=""><h4>Paris , la cuidad bella de Francia</h4></div>
-                        <div class=""><strong>Estancia + Vuelo</strong></div>
-                        <div class=""><span class="descripcion">Vuelo + Alojamiento + 4 Desayunos + Guía Turistica</span></div>
-                        <div class="p-3 align-items-center justify-content-end reservar">
-                            <span class="precio">desde<strong>1175€</strong><a href="#destinos" class="btn btn-warning">RESERVAR</a></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-4 columna-ultimahora">
-                    <div class="d-flex flex-column destino">
-                        <div class="destino-amsterdam"></div>
-                        <div class=""><h4>¿Quieres conocer Amsterdam?</h4></div>
-                        <div class=""><strong>Estancia</strong></div>
-                        <div class=""><span class="descripcion">Vuelo + Alojamiento + 4 Desayunos + Guía Turistica</span></div>
-                        <div class="p-3 align-items-center justify-content-end reservar">
-                            <span class="precio">desde<strong>820€</strong><a href="#destinos" class="btn btn-warning">RESERVAR</a></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-4 columna-ultimahora">
-                    <div class="d-flex flex-column destino">
-                        <div class="destino-rome"></div>
-                        <div class=""><h4>Italia , el pais de la comida</h4></div>
-                        <div class=""><strong>Estancia</strong></div>
-                        <div class=""><span
-                                class="descripcion">Vuelo + Alojamiento + 4 Desayunos + Guía Turistica</span></div>
-                        <div class="p-3 align-items-center justify-content-end reservar">
-                            <span class="precio">desde<strong>777€</strong><a href="#destinos" class="btn btn-warning">RESERVAR</a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </div>
             <div class="row fila-destinos d-flex d-sm-flex d-md-flex d-lg-none d-xl-none">
                 <div class="col-12">
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -217,5 +165,4 @@
             </div>
         </div>
     </div>
-
 </section>
