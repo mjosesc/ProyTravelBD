@@ -57,7 +57,7 @@ router.post('/loginook', function (req,res) {
     let Usuario={
         usuario:req.body.usuario,
         password:req.body.password
-    }
+    };
 
     userModel.login(Usuario,function (error,result) {
         if(error) res.status(500).json(error);
@@ -72,16 +72,11 @@ router.post('/loginook', function (req,res) {
                 break;
             case 1:
                 console.log(Usuario);
-                res.render('home', {
-                    title: "Usuario logeado",
-                    layout: 'layout',
-                    logeado: true,
-                    usuario: Usuario.usuario
-                })
+                res.redirect('/');
                 break;
         }
     })
-})
+});
 
 
 router.post('/registrook', function (req, res) {
