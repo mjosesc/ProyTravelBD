@@ -1,7 +1,7 @@
 let conn=require('../connections/mysqlconnection');
 let Destinos={};
 
-// listado de Usuarios
+// listado de Viajes
 Destinos.fetchAll=(cb)=> {
     if (!conn) return cb("No se ha podido realizar conexión");
     const SQL = "SELECT * FROM destinos WHERE activo=1";

@@ -1,0 +1,42 @@
+<section id="admin-info">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-4 col-md-8 offset-md-2 cont-admindest">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Viaje</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Fecha ida</th>
+                        <th scope="col">Fecha vuelta</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col">Activo</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#if destinos.length}}
+                        {{#each destinos}}
+                            <tr>
+                                <th scope="row">{{id}}</th>
+                                <td>{{viaje}}</td>
+                                <td>{{precio}} €</td>
+                                <td>{{fecha_sal}}</td>
+                                <td>{{fecha_vuel}}</td>
+                                <td>{{descripcion}}</td>
+                                <td>{{imagen}}</td>
+                                <td>
+                                    <input type="checkbox" onclick='window.location.assign("/admin/destinos/active/{{id}}")'  id="customCheck1" {{#if activo}} checked  {{/if}}>
+                                </td>
+                                <td><button type="button"  onclick='window.location.assign("/admin/destinos/delete/{{id}}")' class="btn btn-danger"><i class="fas fa-trash-alt"></i></button></td>
+                            </tr>
+                        {{/each}}
+                    {{/if}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

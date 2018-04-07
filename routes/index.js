@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 var userModel=require('../models/userModel');
 var destinosModel=require('../models/destinosModel');
-/* GET home page.
+
+/*/GET home page.
 router.get('/', function(req, res, next) {
   res.render('home',
       {
@@ -113,6 +114,13 @@ router.post('/registrook', function (req, res) {
         }
     })
 })
+router.get('/admindestinos', function(req, res, next) {
+    res.render('adminview',
+        {
+            title: 'Administración Destinos',
+            layout: 'layout2',
+        });
+});
 
 router.get('/*', function(req, res, next) {
     res.render('error404',
