@@ -13,7 +13,7 @@ Users.fetchAll=(cb)=>{
 // Comprobacion de usuario y registro
 Users.registro=function (usuario,cb) {
 
-    if(!conn) return cb("Fallo al conectar a la BD");
+    if(!conn) return cb("No existe conexión con la BD");
     conn.query('SELECT * FROM usuarios WHERE usuario=?',[usuario.usuario],(error,result)=>{
         if(error) return cb(error);
         if (result != ''){
@@ -32,7 +32,6 @@ Users.registro=function (usuario,cb) {
             })
         }
     })
-
 }
 
 // login de usuario
